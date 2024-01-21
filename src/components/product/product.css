@@ -1,0 +1,47 @@
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.product__name {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.product__colors {
+  color: gray;
+}
+
+.product__colors-item {
+  margin-right: 10px;
+}
+
+.product__colors-item.active {
+  color: plum;
+}
+
+.product__galery {
+  position: relative;
+}
+
+.product__galery-list {
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.product__galery-list button {
+  max-width: 50px;
+  padding: 5px;
+}
+
+.product__galery-list button.active {
+  border: 1px solid plum;
+  border-radius: 4px;
+}
