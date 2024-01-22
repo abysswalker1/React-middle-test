@@ -3,19 +3,18 @@ import React, { useEffect } from 'react';
 import productSlice from '../../../store/productSlice';
 import { observer } from 'mobx-react-lite';
 
-const ProductGalery = observer(() => {
-  const [image, setImage] = React.useState(0);
-  const { currentColor } = productSlice; 
+const ProductGalery = observer(({ color }) => {
+  const [currentImage, setImage] = React.useState(0);
 
   return (
     <div className='product__galery'>
-      <img className='product__galery-main' src={currentColor.images[image]} alt="" />
-      {(currentColor.images.length)
+      <img className='product__galery-main' src={color.images[currentImage]} alt="" />
+      {(color.images.length)
         ? <div className="product__galery-list">
-            {currentColor.images.map(
+            {color.images.map(
               (item, index) =>  {
                 const btnClass = classNames({
-                  'active': index === image
+                  'active': index === currentImage
                 })
                 return (
                   <button 

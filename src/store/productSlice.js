@@ -2,8 +2,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 import { getProduct, getProductColor } from "../services/api";
 
 class ProductSlice {
-  currentProduct = {};
-  currentColor = {};
+  currentProduct = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -24,9 +23,6 @@ class ProductSlice {
           this.currentProduct = data;
         })
       })
-      .then(() => {
-        this.getColorFromApi(id, 1);
-      });
   };
 };
 
